@@ -1,10 +1,15 @@
 
+import { useContext } from 'react';
 import Icon from '../../atoms/icon/Icon';
 import { MenuIcon, NoteIcon } from '../../../data';
+
+import { SidebarContext } from '../../../util/clickSidebar';
 
 import s from './Navbar.module.scss';
 
 const Navbar = () => {
+
+  const { toggleSidebar } = useContext(SidebarContext);
 
   return (
     <nav className={s.container}>
@@ -16,7 +21,10 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className={s.rightItems}>
+        <div 
+          className={s.rightItems}
+          onClick={() => toggleSidebar()}
+        >
           <MenuIcon />
         </div>
       </div>

@@ -1,0 +1,23 @@
+
+.container {
+  // border: 1px solid orange;
+
+  padding: 26px;
+
+}
+
+.headerMain {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-around;
+
+  width: 100%;
+
+  border: 1px solid red;
+}
+
+
+.searchBar {
+  padding-inline-start: 16px;
+}

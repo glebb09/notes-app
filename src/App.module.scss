@@ -1,8 +1,30 @@
 
 .container {
+  position: relative;
 
-  max-width: 100vw;
-  max-height: 100vh;
+  // max-width: 100vw;
+  min-height: 100vh;
+}
+
+.content {
+
+  display: grid;
+  grid: 1fr / min-content 1fr;
+
+  max-width: 1250px;
+  min-height: 100vh;                // ?
 
 
+  margin: 0 auto;
+
+  // border: 1px solid red;
+
+}
+
+@media (max-width: 540px) {
+  .content {
+    & > :matches(aside, main) {
+      grid-area: stack;
+    }
+  }
 }
