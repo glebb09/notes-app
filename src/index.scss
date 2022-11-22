@@ -10,6 +10,7 @@ body {
   background: var(--baclgaround-light);
 
   min-block-size: 100vh;
+  // max-height: 100vh;
 }
 
 // code {
@@ -97,6 +98,16 @@ body {
   --surface-two: var(--surface-two-light);
   --surface-three: var(--surface-three-light);
   --surface-four: var(--surface-four-light);
+
+  --surface-shadow: var(--surface-shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+
+
+  //button 
+
+  --padding-inline-btn: 1.75ch;
+  --padding-block-btn: .75ch;
+
 }
 
 @media (prefers-color-scheme: dark) {

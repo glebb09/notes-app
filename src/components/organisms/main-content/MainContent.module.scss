@@ -1,6 +1,9 @@
 
 .container {
+  
   // border: 1px solid orange;
+
+  // grid-area: main;        // 1 day ago
 
   padding: 26px;
 
@@ -9,15 +12,24 @@
 .headerMain {
   display: flex;
   align-items: center;
-
-  justify-content: space-around;
+  justify-content: center;
 
   width: 100%;
 
-  border: 1px solid red;
+  position: relative;
+
 }
 
 
 .searchBar {
-  padding-inline-start: 16px;
+  // padding-inline-start: 16px;
+
+  span {
+    position: absolute;
+    top: 32%;
+    
+    // bottom: 0;
+    padding-inline-start: .5rem;
+
+  }
 }

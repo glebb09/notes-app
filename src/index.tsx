@@ -7,7 +7,7 @@ import App from './App';
 import { ThemeProvider } from './util/themeContext'
 import { SidebarProvider } from './util/clickSidebar';
 
-import './index.module.scss';
+import './index.scss';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

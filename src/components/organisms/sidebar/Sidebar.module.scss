@@ -1,10 +1,15 @@
 
 .container {
   --duration : .6s;
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+
+  // grid-area: aside;            // 1 day ago
   // border: 1px solid blue;
 
-  // flex-basis: 240px;
-  min-width: 240px;
+  // flex-basis: 240px;           // 1 day ago
+  // min-width: 240px;             
   
   border-right: 1px solid hsl(240 10% 87%);
 
@@ -71,17 +76,24 @@
 }
 
 
-@media (max-width: 540px) {
+@media (max-width: 539px) {
   .container {
 
     // width: 90vh;
 
     visibility: visible;
+    opacity: 1;
     transform: translateX(0);
     
     transition: transform var(--duration) ease-in;
 
-    &[side-open="true"] {
+    box-shadow: 
+        0 1px 2px -1px hsl( var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
+        0 1px 4px -1px hsl( var(--shadow-color) / calc(var(--shadow-strength) + 10%)),
+        0 1px 8px -1px hsl( var(--shadow-color) / calc(var(--shadow-strength) + 10%)),
+        0 1px 10px -1px hsl( var(--shadow-color) / calc(var(--shadow-strength) + 11%));
+
+    &[side-open="false"] {
       position: sticky;
       top: 0;
       max-height: 100vh;
@@ -93,6 +105,8 @@
       visibility: 0s linear var(--duration);
 
       visibility: hidden;
+      opacity: 0;
+
     }
 
   }
