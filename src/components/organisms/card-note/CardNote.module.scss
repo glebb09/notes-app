@@ -1,0 +1,72 @@
+
+.container {
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+
+  border: 1px solid hsl(240 10% 87%);
+  border-radius: .5rem;
+
+  margin-inline: 1rem;
+  margin-block: 1rem;
+
+  // max-inline-size: min(35ch, 50%);
+  // max-block-size: min(30ch, 30%);
+  width: 40ch;        //35
+  height: 25ch;       //25
+
+  box-shadow: 
+    0 1px 2px -1px hsl( var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  
+}
+
+.content {
+  // border: 1px solid red;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-inline: 1rem;
+  padding-block: .5rem;
+
+  header {
+    align-self: flex-end;
+  }
+
+  main {
+    display: flex; 
+    flex-direction: column; 
+
+    .textCard {
+      // border: 1px solid red;
+      display: -webkit-box;
+      height: 120px;
+
+      font-size: 15px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;      // ellips
+
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+
+
+    }
+  }
+
+  footer {
+    margin-block-start: .5ch;
+    // border: 1px solid red;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .timeCard {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+}

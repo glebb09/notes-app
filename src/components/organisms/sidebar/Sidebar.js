@@ -1,13 +1,17 @@
 
 import { useContext } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { SidebarContext } from '../../../util/clickSidebar';
+import { openModal } from '../../../features/note/modalSlice';
 
 import { PlusIcon } from '../../../data';
 
 import s from './Sidebar.module.scss';
 
 const Sidebar = () => {
+
+  const dispatch = useDispatch();
 
   const { open } = useContext(SidebarContext);
 
@@ -20,7 +24,10 @@ const Sidebar = () => {
         <div className={s.sidebarWrapper}>
           <div className={s.sidebarTitle}>Menu</div>
 
-          <div className={s.sidebarMenu}>
+          <div 
+            className={s.sidebarMenu}
+            onClick={() => dispatch(openModal())}
+          >
               <PlusIcon className={s.icon}/>
               New Note
           </div>

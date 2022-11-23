@@ -38,7 +38,21 @@
 
   cursor: pointer;
 
-  &[type="confirm"] {
+  &[data-size="small"] {
+    --padding-inline-btn: 1ch;
+    --padding-block-btn: .5ch;
+
+    &:hover {
+      --text-btn: hsl(228, 95%, 58%);
+      --bg-btn: hsl(228, 93%, 96%);
+    }
+
+    :where(:focus, :active) {
+      --bg-btn: hsl(228, 93%, 94%);
+    }
+  }
+
+  &[data-type="confirm"] {
     --bg-btn: hsl(228, 93%, 62%);
     --border-btn:  hsl(228 89% 63%);
     --text-btn: hsl(210 1% 99%);
@@ -52,7 +66,7 @@
     }
   }
 
-  &[type="reset"] {
+  &[data-type="reset"] {
     --border-btn: hsl(0, 100%, 83%);
     --text-btn: hsl(0 80% 50%);
 
@@ -65,7 +79,7 @@
     }
   }
 
-  &[type="cancel"] {
+  &[data-type="cancel"] {
     --border-btn: hsl(228, 93%, 62%);
     --text-btn: hsl(228, 93%, 62%);
 
@@ -78,6 +92,7 @@
     &:where(:focus, :active) {
       --bg-btn: hsl(228, 93%, 94%);
     }
+
   }
 
 }

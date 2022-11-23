@@ -4,6 +4,9 @@ import s from './Button.module.scss';
 const Button = ({
   children,
   newClassName,
+  mType,
+  size,
+  onClick,
   ...rest
 }) => {
 
@@ -14,7 +17,13 @@ const Button = ({
   // }
 
   return (
-    <button className={buttonClass} {...rest}>
+    <button 
+      className={buttonClass} 
+      data-size={size} 
+      data-type={mType}
+      onClick={onClick} 
+      {...rest}
+    >
         {children}
     </button>
   )
