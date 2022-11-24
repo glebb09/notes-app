@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Tag from '../../atoms/tag/Tag';
 import Button from '../../atoms/button';
+import DotsMenu from '../../atoms/dots-menu/DotsMenu';
 
 import { removeNoteIdLocal } from '../../../util/noteLocal';
 import { openModal } from '../../../features/note/modalSlice';
@@ -21,6 +22,8 @@ const CardNote = ({
 }) => {
 
   const dispatch = useDispatch();
+
+  const [dotsShow, setDotsShow] = useState(false);
 
   const handleRemoveIdNotes = (id) => {
     removeNoteIdLocal(id);
@@ -41,8 +44,13 @@ const CardNote = ({
   return (
     <div className={s.container}>
       <div className={s.content}>
-        <header>
-          <ThreeDots />
+        <header className={s.header}>
+          <DotsMenu
+            dotsShow={dotsShow}
+            openMenu={setDotsShow} 
+            idDelete={id}
+            onClickDelete={handleRemoveIdNotes}
+          />
         </header>
 
         <main>
@@ -77,7 +85,7 @@ const CardNote = ({
             View
           </Button>
 
-          <Button
+          {/* <Button
             newClassName="reset"
             type="button"
             mType="reset"
@@ -85,7 +93,7 @@ const CardNote = ({
             onClick={() => handleRemoveIdNotes(id)}
           >
             Delete
-          </Button>
+          </Button> */}
 
         </footer>
       </div>
@@ -94,3 +102,16 @@ const CardNote = ({
 }
 
 export default CardNote;
+
+
+/*
+ { <span 
+            className={s.dotsBtn} 
+            aria-haspopup="true" 
+            aria-expanded="false"
+          >
+            <ThreeDots />
+            <DotsMenu />
+          </span> }
+          
+*/

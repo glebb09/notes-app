@@ -20,6 +20,47 @@
   
 }
 
+.header {
+  position: relative;
+
+  cursor: pointer;
+  display: flex;
+  place-content: center;
+  
+  transition: all .2s ease-in;
+
+  &:hover { 
+    // opacity: .7;
+  }
+}
+
+
+.dotsBtn {
+  display: inline-flex;
+  // align-items: center;
+  // justify-content: center;
+  border-radius: .5rem;
+  // background: hsl(220 75% 50%);
+  
+  touch-action: manipulation;
+  user-select: none;
+
+  position: relative;
+  
+  &:hover {
+    // background: hsl(220 50% 75%);
+
+  }
+
+  &:focus-within {
+    transition-duration: 50ms;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+}
+
 .content {
   // border: 1px solid red;
 
@@ -57,7 +98,7 @@
   }
 
   footer {
-    margin-block-start: .5ch;
+    margin-block-start: 1.25ch;
     // border: 1px solid red;
 
     display: flex;
@@ -67,6 +108,20 @@
     .timeCard {
       font-size: 14px;
       font-weight: 700;
+    }
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference){
+  .dotsBtn {
+
+    &:focus-within {
+      transform: translateY(5px);
+
+      transition: 
+        opacity 300ms ease,
+        transform 300ms ease;
     }
   }
 }
