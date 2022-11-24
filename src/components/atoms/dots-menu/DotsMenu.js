@@ -23,8 +23,10 @@ const DotsMenu = ({
           
           <ul className={[
             s.content,
-            dotsShow ? s.menu : ''
-            ].join(" ")}>
+            dotsShow ? s.menu : '',
+            idDelete % 2 ? s.even : '',
+            ].join(" ")}
+            >
             <li>
               <button disabled>Bookmark</button>
             </li>

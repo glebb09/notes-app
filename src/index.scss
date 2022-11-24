@@ -7,16 +7,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: var(--baclgaround-light);
+  background: var(--backgaround);
 
   min-block-size: 100vh;
   // max-height: 100vh;
 }
-
-// code {
-//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-//     monospace;
-// }
 
 * {
 
@@ -28,7 +23,7 @@ body {
 
   // background
 
-  --baclgaround-light: hsl(0, 0%, 97%);
+  --backgaround-light: hsl(0, 0%, 97%);
 
   // color
   --brand-lignt: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
@@ -115,7 +110,7 @@ body {
   :root {
     color-scheme: dark;
 
-    --brand: var(--brand-dark);
+    --background: var(--brand-dark);
 
     --text-one: var(--text-one-dark);
     --text-two: var(--text-two-dark);

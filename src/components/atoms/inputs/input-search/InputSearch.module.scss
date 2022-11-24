@@ -35,3 +35,10 @@ input {
   }
 }
 
+
+
+@media (max-width: 531px) {
+  .input {
+    max-width: calc(100vw - 20em);
+  }
+} 

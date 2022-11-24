@@ -48,9 +48,10 @@
 
 }
 
-@media (max-width: 539px) {
+@media (max-width: 730px) {
   .content {
-    
+    display: flex;
+
     // grid-template-columns: minmax(0, 240px) 1fr;
 
     // position: absolute;
@@ -64,6 +65,13 @@
     // & > :matches(aside, main) {      // 1 day ago
     //   // grid-area: stack;
     // }
+  }
+}
+
+@media (max-width: 531px) {
+  .content {
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 

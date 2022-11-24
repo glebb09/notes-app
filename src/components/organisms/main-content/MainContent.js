@@ -50,22 +50,24 @@ const MainContent = () => {
         </div>
       </div>
 
-      <FieldContent 
-      >
-          {notesLoacal && notesLoacal.filter((item, id) => {
-            return search.toLowerCase() === '' ? item : 
-                  item.tags.some((tag) => tag.toLowerCase().includes(`#${search}`.toLowerCase()));
-          }).map((note, id) => (
-            <CardNote 
-              key={note.id}
-              id={id}
-              tags={note.tags}
-              text={note.text}
-              dateCreate={note.date}
-            />
-            ))}
-      
-      </FieldContent>
+      <div className={s.fieldContainer}>
+        <FieldContent 
+        >
+            {notesLoacal && notesLoacal.filter((item, id) => {
+              return search.toLowerCase() === '' ? item : 
+                    item.tags.some((tag) => tag.toLowerCase().includes(`#${search}`.toLowerCase()));
+            }).map((note, id) => (
+              <CardNote 
+                key={note.id}
+                id={id}
+                tags={note.tags}
+                text={note.text}
+                dateCreate={note.date}
+              />
+              ))}
+        
+        </FieldContent>
+      </div>
 
       { status && <ModalNote showModal={status} /> }
 
